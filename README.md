@@ -1,2 +1,2 @@
 # resume
-Ray Matthes Resume
+Ray Matthes' Resume is published at https://raymatthes.github.io/resume/
