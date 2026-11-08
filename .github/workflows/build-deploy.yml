@@ -26,14 +26,13 @@ jobs:
           markdown_file: './RayMatthesResume.md'
           output_dir: './'
 
-      # https://github.com/marketplace/actions/upload-a-build-artifact
+      # https://github.com/actions/upload-artifact
       - name: Upload PDF as artifact
         uses: actions/upload-artifact@v7
         with:
           name: github-pages
-          path: |
-            'index.html'
-            'RayMatthesResume.pdf'
+          path: 'index.html'
+            #'RayMatthesResume.pdf'
 
   # Deployment job
   deploy:
