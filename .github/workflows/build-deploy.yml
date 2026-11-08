@@ -28,13 +28,14 @@ jobs:
           output_dir: './'
           pdf_options: |
             {
-              format: Letter,
+              format: letter,
               margin: {
                 top: 0.50in,
                 right: 0.75in,
                 bottom: 0.75in,
                 left: 0.75in
               },
+              displayHeaderFooter: true,
               headerTemplate: '<style>section { margin: 0 auto; font-family: system-ui; font-size: 11px; }</style>',
               footerTemplate: '<section><div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div></section>'
             }
