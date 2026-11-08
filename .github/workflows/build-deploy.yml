@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Convert Markdown to PDF
-        uses: raymatthes/markdown-to-pdf-action@v1
+        uses: narthanaj/markdown-to-pdf-action@v1
         with:
           markdown_file: './RayMatthesResume.md'
           output_dir: './'
