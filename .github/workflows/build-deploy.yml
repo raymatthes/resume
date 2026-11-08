@@ -7,6 +7,7 @@ on:
       - '.github/workflows/build-deploy.yml'
       - 'index.html'
       - 'RayMatthesResume.md'
+      - 'custom.css'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -39,6 +40,7 @@ jobs:
               "headerTemplate": "<style>section { margin: 0 auto; font-family: system-ui; font-size: 11px; }</style>",
               "footerTemplate": "<section><div>Page <span class='pageNumber'></span> of <span class='totalPages'></span></div></section>"
             }
+          css_file: './custom.css'
 
       # https://github.com/marketplace/actions/upload-github-pages-artifact
       - name: Upload pages artifact

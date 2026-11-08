@@ -1,0 +1,22 @@
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 12pt;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #003366;
+  border-bottom: 1px solid #cccccc;
+}
+
+code {
+  background-color: #f5f5f5;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+section {
+    margin: 0 auto;
+    font-family: system-ui;
+    font-size: 11px;
+}
