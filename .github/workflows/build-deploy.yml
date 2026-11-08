@@ -2,7 +2,7 @@ name: Generate and publish resume PDF
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ 'main' ]
     paths:
       - '.github/workflows/build-deploy.yml'
       - 'index.html'
@@ -26,6 +26,18 @@ jobs:
         with:
           markdown_file: './RayMatthesResume.md'
           output_dir: './'
+          pdf_options: |
+            {
+              format: Letter,
+              margin: {
+                top: 0.50in,
+                right: 0.75in,
+                bottom: 0.75in,
+                left: 0.75in
+              },
+              headerTemplate: '<style>section { margin: 0 auto; font-family: system-ui; font-size: 11px; }</style>',
+              footerTemplate: '<section><div>Page <span class="pageNumber"></span> of <span class="totalPages"></span></div></section>'
+            }
 
       # https://github.com/marketplace/actions/upload-github-pages-artifact
       - name: Upload pages artifact

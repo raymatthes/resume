@@ -1,26 +1,3 @@
----
-pdf_options:
-  format: letter
-  margin:
-    top: 0.50in
-    bottom: 0.75in
-    left: 0.75in
-    right: 0.75in
-  headerTemplate: |-
-    <style>
-      section {
-        margin: 0 auto;
-        font-family: system-ui;
-        font-size: 11px;
-      }
-    </style>
-  footerTemplate: |-
-    <section>
-      <div>
-        Page <span class="pageNumber"></span> of <span class="totalPages"></span>
-      </div>
-    </section>
----
 # Raymond A. Matthes
 **Senior Software Engineer** | Heber City, Utah and remote\
 ray.matthes@gmail.com | [raymatthes.github.io/resume (PDF)](https://raymatthes.github.io/resume/)
@@ -128,4 +105,3 @@ Georgia Tech | Atlanta, Georgia
 * Oracle Certified Professional Java SE Programmer (OCPJP)
 * Attendee: Rocky Mountain Software Symposiums (2003, 2006, 2013), UberConf (2016), GR8Conf US (2014, 2018), ArchConf (2022).
 * Active participant in Local Java User Groups (DJUG & BJUG).
-
