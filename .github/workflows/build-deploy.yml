@@ -4,6 +4,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
+      - '.github/workflows/build-deploy.yml'
       - 'index.html'
       - 'RayMatthesResume.md'
   # Allows you to run this workflow manually from the Actions tab
@@ -29,10 +30,10 @@ jobs:
       - name: Upload PDF as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: 'Ray Matthes Resume'
+          name: github-pages
           path: |
-            './index.html'
-            './RayMatthesResume.pdf'
+            'index.html'
+            'RayMatthesResume.pdf'
 
   # Deployment job
   deploy:
