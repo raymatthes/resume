@@ -31,14 +31,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: github-pages
-          path: 'index.html'
-
-      # https://github.com/actions/upload-artifact
-      - name: Upload PDF as artifact
-        uses: actions/upload-artifact@v7
-        with:
-          name: github-pages
-          path: 'RayMatthesResume.pdf'
+          path: ./*
 
   # Deployment job
   deploy:
