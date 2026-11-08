@@ -20,19 +20,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Markdown to PDF Converter
+      - name: Convert Markdown to PDF
         uses: narthanaj/markdown-to-pdf-action@v2.0.0
         with:
           markdown_file: './RayMatthesResume.md'
           output_dir: './'
 
       # https://github.com/actions/upload-artifact
-      - name: Upload PDF as artifact
+      - name: Upload index.html as artifact
         uses: actions/upload-artifact@v7
         with:
           name: github-pages
           path: 'index.html'
-            #'RayMatthesResume.pdf'
+
+      # https://github.com/actions/upload-artifact
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: github-pages
+          path: 'RayMatthesResume.pdf'
 
   # Deployment job
   deploy:
