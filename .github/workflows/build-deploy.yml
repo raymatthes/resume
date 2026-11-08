@@ -26,12 +26,12 @@ jobs:
           markdown_file: './RayMatthesResume.md'
           output_dir: './'
 
-      # https://github.com/actions/upload-artifact
-      - name: Upload index.html as artifact
-        uses: actions/upload-artifact@v7
+      - name: Upload pages artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
-          path: ./*
+          path: ./
 
   # Deployment job
   deploy:
