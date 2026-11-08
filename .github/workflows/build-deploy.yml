@@ -1,0 +1,50 @@
+name: Generate and Commit resume PDF
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'RayMatthesResume.md'
+    # Prevents infinite build loops when the action commits the PDF back
+    branches-ignore:
+      - ''
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Convert Markdown to PDF
+        uses: raymatthes/markdown-to-pdf-action@v1
+        with:
+          markdown_file: './RayMatthesResume.md'
+          output_dir: './'
+
+      - name: Upload PDFs as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-files
+          path: './pdf-output/*.pdf'
+
+  # Deployment job, https://github.com/marketplace/actions/deploy-github-pages-site
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    runs-on: ubuntu-latest
+    needs: build
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
